@@ -23,6 +23,17 @@ body{
     z-index: 10;
     transition: all 0.3s ease-in-out;
 }
+
+.active{
+    position: fixed;
+    background-color: teal;
+    margin: 0;
+    width: 100vw;
+    height: 8svh;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+}
+
 /* To get the text in nav center and all other stuff */
 .line{
     display: flex;
