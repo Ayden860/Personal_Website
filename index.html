@@ -13,19 +13,19 @@
     <!-- Nav bar on top -->
     <nav id="nav" class="nav">
         <div class="line">
-            <a href="#home">
+            <a href="#home" onclick="highlightSection('home-2')">
                 <p>Home</p>
             </a>
-            <a href="#project">
+            <a href="#project" onclick="highlightSection('project-2')">
                 <p>Projects</p>
             </a>
-            <a href="#resume">
+            <a href="#resume" onclick="highlightSection('resume-2')">
                 <p>Resume</p>
             </a>
-            <a href="#about">
+            <a href="#about" onclick="highlightSection('about-2')">
                 <p>About Me</p>
             </a>
-            <a href="#contact">
+            <a href="#contact" onclick="highlightSection('contact-2')">
                 <p>Contact</p>
             </a>
         </div>
@@ -33,7 +33,7 @@
     <!-- This is home/hero image -->
     <section id="home" class="container">
         <section class="hero">
-            <section class="name">
+            <section id="home-2" class="name">
                 <h1>Ayden Yang</h1>
                 <h3>Graphic Designer, UI/UX Designer, & Front-End Developer</h3>
             </section>
@@ -46,7 +46,7 @@
             <section class="project">
                 <section class="left">
                     <a href="pages/projects.html">
-                        <h2>See my lastest project</h2>
+                        <h2 id="project-2">See my lastest project</h2>
                     </a>
                     <p>Description</p>
                 </section>
@@ -63,7 +63,7 @@
             <section class="resume">
                 <section class="left">
                     <a href="pages/resume.html">
-                        <h2>Come look at my resume</h2>
+                        <h2 id="resume-2">Come look at my resume</h2>
                     </a>
                     <p>Description</p>
                 </section>
@@ -80,7 +80,7 @@
             <section class="about">
                 <section class="left">
                     <a href="pages/aboutMe.html">
-                        <h2>See my lastest project</h2>
+                        <h2 id="about-2">See my lastest project</h2>
                     </a>
                     <p>Description</p>
                 </section>
@@ -103,7 +103,7 @@
     <div class="spacer"></div>
     <!-- Start of Contact section -->
     <div id="contact" class="spacer"></div>
-    <footer>Hello</footer>
+    <footer id="contact-2">Hello</footer>
 </body>
 
 </html>
