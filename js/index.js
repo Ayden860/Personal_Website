@@ -1,13 +1,13 @@
 // Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//     anchor.addEventListener('click', function (e) {
+//         e.preventDefault();
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+//         document.querySelector(this.getAttribute('href')).scrollIntoView({
+//             behavior: 'smooth'
+//         });
+//     });
+// });
 
 // getting nav
 nav = document.getElementById('nav');
@@ -22,8 +22,10 @@ window.addEventListener('scroll', function () {
         nav.classList.remove('active')
     }
 });
-
-// After clicking link it will highlight the content (total 4 blinks)
+document.addEventListener('DOMContentLoaded', function(){
+    highlightSection(sectionId)
+})
+// After clicking link it will highlight the content (total 5 blinks)
 function highlightSection(sectionId) {
     var section = document.getElementById(sectionId);
     if (section) {
@@ -35,10 +37,10 @@ function highlightSection(sectionId) {
                 setTimeout(function () {
                     section.classList.remove('highlight');
                     setTimeout(function () {
-                        section.classList.add('highlight');
-                        setTimeout(function () {
-                            section.classList.remove('highlight');
-                            setTimeout(function () {
+                        // section.classList.add('highlight');
+                        // setTimeout(function () {
+                            // section.classList.remove('highlight');
+                            // setTimeout(function () {
                                 // section.classList.add('highlight');
                                 // setTimeout(function () {
                                     // section.classList.remove('highlight');
@@ -46,11 +48,11 @@ function highlightSection(sectionId) {
                                         section.classList.add('highlight');
                                         setTimeout(function () {
                                             section.classList.remove('highlight');
-                                        }, 4000);
+                                        }, 2500);
                                     // }, 200);
                                 // }, 1000);
-                            }, 200);
-                        }, 1000);
+                            // }, 200);
+                        // }, 1000);
                     }, 200);
                 }, 1000);
             }, 200);//Add
