@@ -29,14 +29,15 @@ document.addEventListener('DOMContentLoaded', function(){
 function highlightSection(sectionId) {
     var section = document.getElementById(sectionId);
     if (section) {
-        section.classList.add('highlight');
-        setTimeout(function () {
-            section.classList.remove('highlight');
-            setTimeout(function () {
-                section.classList.add('highlight');
-                setTimeout(function () {
-                    section.classList.remove('highlight');
-                    setTimeout(function () {
+        // section.classList.add('highlight');
+        // setTimeout(function () {
+            // section.classList.remove('highlight');
+            // setTimeout(function () {
+                // section.classList.add('highlight');
+                // setTimeout(function () {
+                    // section.classList.remove('highlight');
+                    // setTimeout(function () {
+                        // previously commented out
                         // section.classList.add('highlight');
                         // setTimeout(function () {
                             // section.classList.remove('highlight');
@@ -53,9 +54,10 @@ function highlightSection(sectionId) {
                                 // }, 1000);
                             // }, 200);
                         // }, 1000);
-                    }, 200);
-                }, 1000);
-            }, 200);//Add
-        }, 1000); //Remove
+                    
+                    // }, 200);
+                // }, 1000);
+            //}, 200);//Add
+        //}, 1000); //Remove
     }
 }
