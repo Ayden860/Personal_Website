@@ -1,14 +1,3 @@
-// Smooth scroll
-// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-//     anchor.addEventListener('click', function (e) {
-//         e.preventDefault();
-
-//         document.querySelector(this.getAttribute('href')).scrollIntoView({
-//             behavior: 'smooth'
-//         });
-//     });
-// });
-
 // getting nav
 nav = document.getElementById('nav');
 // Detecting screen scroll to change nav
@@ -61,3 +50,22 @@ function highlightSection(sectionId) {
         //}, 1000); //Remove
     }
 }
+
+// Pretty color/words working
+const prtColors = document.getElementById('prt-colors')
+const prtWords = document.getElementById('prt-words')
+prtColors.addEventListener('mouseover', () => {
+  // Change the button's background color
+  prtColors.style.opacity = '0.5';
+  prtWords.style.opacity = '1';
+});
+// Add a mouseout event listener
+prtColors.addEventListener('mouseout', () => {
+  prtColors.style.opacity = '1';
+  prtWords.style.opacity = '0';
+});
+prtWords.addEventListener('mouseover', () => {
+    // Change the button's background color
+    prtColors.style.opacity = '0.5';
+    prtWords.style.opacity = '1';
+  });
