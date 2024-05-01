@@ -50,7 +50,7 @@ body {
     height: 100%;
 }
 
-#noChange {
+.noChange {
     display: flex;
     justify-content: center;
     /* background-color: white; */
@@ -62,9 +62,20 @@ body {
     margin: 0;
 }
 
-#noChange:active {
+.noChange:active {
     background-color: teal;
 }
+
+/* This is too much work will little time */
+/* .noChange-3{
+    width: 80svw;
+    height: 30svh;
+    display: flex;
+} */
+
+/* .noChange-3 img{
+    width: 100%;
+} */
 
 /* Decoration for text in nav */
 a {
@@ -241,6 +252,20 @@ a:active {
     flex-direction: column;
     width: 100%;
     padding: 20px;
+    color: white;
+}
+
+.extra-big{
+    font-size: 4rem;
+}
+
+.inline{
+    display: flex;
+    align-items: flex-end;
+}
+
+.inline h2{
+    padding-bottom: 1rem;
 }
 
 .blur {
