@@ -282,22 +282,30 @@ a:active {
     transition: all 0.3s ease;
 }
 
+.drop-down a li,  .drop-down a{
+    display: flex;
+    align-items: center;
+    list-style-type: number;
+}
+
+
 .drop-down-open {
     max-height: 200px;
     width: 80svw;
-    background-color: black;
+    background-color: #0F6298;
     transition: all 0.3s ease;
 }
 
 .clickable {
     background-color: teal;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     border-radius: 20px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     display: flex;
     width: 80svw;
-    height: 10svh;
+    /* height: 10svh; */
+    height: 5rem;
     color: white;
 }
 
