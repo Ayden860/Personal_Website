@@ -275,6 +275,55 @@ a:active {
     filter: blur(4px);
 }
 
+.drop-down {
+    max-height: 0;
+    width: 80svw;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.drop-down-open {
+    max-height: 200px;
+    width: 80svw;
+    background-color: black;
+    transition: all 0.3s ease;
+}
+
+.clickable {
+    background-color: teal;
+    border: 2px solid black;
+    border-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    display: flex;
+    width: 80svw;
+    height: 10svh;
+    color: white;
+}
+
+.clickable>h2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 8%;
+}
+
+#arrow-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-right: 1%;
+    width: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.arrChanger{
+    transform: rotate(3.142rad);
+    transition: all 0.3s ease;
+}
+
 footer {
     position: absolute;
     width: 100%;

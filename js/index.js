@@ -9,7 +9,7 @@ container = document.getElementById('holder')
 // (about me)
 stoper = document.getElementById('stoper')
 // Detecting screen scroll to change nav
-console.log(container)
+// console.log(container)
 window.addEventListener('scroll', function () {
     // console.log(window.scrollY)
     // Index page
@@ -84,21 +84,35 @@ function highlightSection(sectionId) {
     }
 }
 
-// Pretty color/words working
-const prtColors = document.getElementById('prt-colors')
-const prtWords = document.getElementById('prt-words')
-prtColors.addEventListener('mouseover', () => {
-    // Change the button's background color
-    prtColors.style.opacity = '0.5';
-    prtWords.style.opacity = '1';
-});
-// Add a mouseout event listener
-prtColors.addEventListener('mouseout', () => {
-    prtColors.style.opacity = '1';
-    prtWords.style.opacity = '0';
-});
-prtWords.addEventListener('mouseover', () => {
-    // Change the button's background color
-    prtColors.style.opacity = '0.5';
-    prtWords.style.opacity = '1';
-});
+if (document.URL.includes("index.html")) {
+    // Pretty color/words working
+    const prtColors = document.getElementById('prt-colors')
+    const prtWords = document.getElementById('prt-words')
+    prtColors.addEventListener('mouseover', () => {
+        // Change the button's background color
+        prtColors.style.opacity = '0.5';
+        prtWords.style.opacity = '1';
+    });
+    // Add a mouseout event listener
+    prtColors.addEventListener('mouseout', () => {
+        prtColors.style.opacity = '1';
+        prtWords.style.opacity = '0';
+    });
+    prtWords.addEventListener('mouseover', () => {
+        // Change the button's background color
+        prtColors.style.opacity = '0.5';
+        prtWords.style.opacity = '1';
+    });
+
+}
+
+trigger = document.getElementById('arrow-2')
+show1 = document.getElementById("drop-down-1")
+
+console.log(trigger)
+// toggle Drop down
+trigger.addEventListener('click', () => {
+    show1.classList.toggle('drop-down-open')
+    trigger.classList.toggle('arrChanger')
+    console.log('working')
+})
