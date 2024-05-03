@@ -279,49 +279,78 @@ a:active {
     max-height: 0;
     width: 80svw;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .drop-down a li,  .drop-down a{
     display: flex;
     align-items: center;
-    list-style-type: number;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 
 .drop-down-open {
-    max-height: 200px;
+    max-height: 300px;
     width: 80svw;
     background-color: #0F6298;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .clickable {
     background-color: teal;
-    /* border: 2px solid black; */
+    border-radius: 20px;
+    /* border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px; */
+    display: flex;
+    width: 80svw;
+    height: 5rem;
+    color: white;
+    transition: all 0.5s ease;
+    justify-content: space-between;
+}
+
+/* Do this in java script (better transiton*/
+.clickable-hover{
+    height: 5.5rem;
+    transition: all 0.3s ease;
+}
+/* Also do this in Java Script */
+.bigArrow {
+    scale: 1.5;
+}
+
+.clickable-open{
+    background-color: teal;
     border-radius: 20px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     display: flex;
     width: 80svw;
-    /* height: 10svh; */
     height: 5rem;
     color: white;
+    transition: all 0.5s ease;
+    justify-content: space-between;
 }
 
 .clickable>h2 {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-left: 8%;
+    margin-left: 4svw;
+    cursor: default;
 }
 
-#arrow-2 {
+
+#arrow-2, #arrow-3, #arrow-4 {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
     margin-right: 1%;
+    /* width: 56svw; */
     width: 100px;
     cursor: pointer;
     transition: all 0.3s ease;
