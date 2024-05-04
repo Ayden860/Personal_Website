@@ -4,6 +4,8 @@ nav = document.getElementById('nav');
 home = document.getElementById('home');
 // (project)
 project = document.getElementById('web')
+// (web-subsection)
+webSub = document.querySelector('.web-identity')
 // (resume)
 container = document.getElementById('holder')
 // (about me)
@@ -13,7 +15,7 @@ stoper = document.getElementById('stoper')
 window.addEventListener('scroll', function () {
     // console.log(window.scrollY)
     // Index page
-    if (this.document.URL.includes("index.html")) {
+    if (this.document.URL.includes("index")) {
         if (window.scrollY > nav.offsetTop + home.offsetHeight) {
             nav.classList.add('active')
         }
@@ -22,7 +24,7 @@ window.addEventListener('scroll', function () {
         }
     }
     // projects page (not done)
-    if (this.document.URL.includes("projects.html")) {
+    if (this.document.URL.includes("projects")) {
         if (window.scrollY > nav.offsetTop + project.offsetHeight) {
             nav.classList.add('active')
         }
@@ -30,8 +32,17 @@ window.addEventListener('scroll', function () {
             nav.classList.remove('active')
         }
     }
+    // web sebsection
+    if (this.document.URL.includes("/web-subsection/")) {
+        if (window.scrollY > nav.offsetTop + webSub.offsetTop) {
+            nav.classList.add('active')
+        }
+        else {
+            nav.classList.remove('active')
+        }
+    }
     // Resume page 
-    if (this.document.URL.includes("resume.html")) {
+    if (this.document.URL.includes("resume")) {
         if (window.scrollY > nav.offsetTop + container.offsetHeight) {
             nav.classList.add('active')
         }
@@ -40,7 +51,7 @@ window.addEventListener('scroll', function () {
         }
     }
     // About Me
-    if (this.document.URL.includes("aboutMe.html")) {
+    if (this.document.URL.includes("aboutMe")) {
         if (window.scrollY > nav.offsetTop + stoper.offsetHeight) {
             nav.classList.add('active')
         }
@@ -49,12 +60,17 @@ window.addEventListener('scroll', function () {
         }
     }
 });
-// document.addEventListener('DOMContentLoaded', function () {
-//     highlightSection(sectionId)
-// })
+// This is for the highlight function to work on other pages
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash) {
+      var sectionId = window.location.hash.substr(1) + "-2";
+      highlightSection(sectionId);
+    }
+  });
 // After clicking link it will highlight the content (total 5 blinks)
 function highlightSection(sectionId) {
     var section = document.getElementById(sectionId);
+    console.log('ran before')
     if (section) {
         // section.classList.add('highlight');
         // setTimeout(function () {
@@ -76,6 +92,7 @@ function highlightSection(sectionId) {
         section.classList.add('highlight');
         setTimeout(function () {
             section.classList.remove('highlight');
+            console.log('ran')
         }, 2500);
         // }, 200);
         // }, 1000);
@@ -110,7 +127,7 @@ if (document.URL.includes("index.html")) {
     });
 
 }
-if (document.URL.includes("projects.html")) {
+if (document.URL.includes("projects")) {
     trigger = document.getElementById('arrow-2')
     show1 = document.getElementById("drop-down-1")
     web = document.getElementById('whole-web')
