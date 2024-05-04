@@ -255,6 +255,12 @@ a:active {
     color: white;
 }
 
+.picture-holder{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+}
+
 .extra-big{
     font-size: 4rem;
 }
@@ -361,14 +367,36 @@ a:active {
     transition: all 0.3s ease;
 }
 
+.pic-link{
+    display: flex;
+}
+
+.pic-link img{
+    width: 100px;
+}
+
+#sp-img{
+    width: 200px;
+}
+
+.smaller-pic{
+    width: 50%;
+    justify-content: center;
+    align-self: center;
+}
+
 footer {
     position: absolute;
     width: 100%;
-    height: 50px;
+    height: fit-content;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     bottom: 0;
     margin: 0;
-    background-color: black;
+    background-color: teal;
     text-align: center;
     color: white;
+    display: flex;
+    justify-content: space-evenly;
     /* padding-bottom: 2em; */
 }
