@@ -198,3 +198,48 @@ function toggleVis(elementID,classToToggle) {
     element.classList.toggle(classToToggle);
     console.log(`Toggle function called on ${element.id}`);
 }
+
+// carousal
+// if (document.URL.includes("aboutMe")) {
+    // var counter = 1;
+    // var nameImage2 = ['blue-background.jpg', ]
+    // var nameAlt2 = ['alt', ]
+    // carousal = document.getElementById('carousal')
+    // let carousal2 = document.getElementById('carousal-2')
+    // carousal3 = document.getElementById('carousal-3')
+    
+    // carousal 2
+//     for(let i = 0; i < 12; i++){
+//         if(0){
+//             carousal2.innerHTML(`<section id="img${counter}" class="image img-active"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`)    
+//             counter++
+//         }
+//         else{
+//             carousal2.innerHTML(`<section id="img${counter}" class="image"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`)
+//             counter++
+//         }        
+//     }
+// }
+if (document.URL.includes("aboutMe")) {
+    secondCarousal()
+    console.log('working')
+}
+
+function secondCarousal(){
+    var counter = 1;
+    var nameImage2 = ['blue-background.jpg', 'email-logo.png', 'blue-background.jpg','blue-background.jpg','blue-background.jpg','blue-background.jpg','blue-background.jpg','blue-background.jpg','blue-background.jpg','blue-background.jpg','blue-background.jpg','blue-background.jpg', ]
+    var nameAlt2 = ['alt', ]
+    let carousal2 = document.getElementById('carousal-2')
+    // carousal2.carousel
+    // Does 12 only need a third element to hold all of the changes
+    for(let i = 0; i < 12; i++){
+        if(i == 0){
+            carousal2.innerHTML = `<section id="img${counter}" class="image img-active"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`  
+            counter++
+        }
+        else{
+            carousal2.innerHTML = `<section id="img${counter}" class="image"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`
+            counter++
+        }        
+    }
+}
