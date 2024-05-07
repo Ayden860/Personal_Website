@@ -226,19 +226,19 @@ if (document.URL.includes("aboutMe")) {
 }
 
 function secondCarousal(){
-    var counter = 1;
-    var nameImage2 = ['blue-background.jpg', 'email-logo.png', 'blue-background.jpg','blue-background.jpg','blue-background.jpg','blue-background.jpg','blue-background.jpg','blue-background.jpg','blue-background.jpg','blue-background.jpg','blue-background.jpg','blue-background.jpg', ]
-    var nameAlt2 = ['alt', ]
+    var counter = 0;
+    var nameImage2 = ['shaver-1.jpg', 'shaver-2.jpg', 'shaver-3.jpg','dif-friant.jpg','honolulu.jpg','sequoia-1.jpg','sequoia-2.jpg','sequoia-3.jpg','friant-1.jpg','friant-2.jpg','fraint-3.jpg']
+    var nameAlt2 = ['shaver 1 image', 'shaver 2 image', 'shaver 3 image', 'different friant', 'honolulu', 'sequoia national park 1 image', 'sequoia national park 2 image', 'sequoia national park 3 image', 'friant image 1', 'friant image 2', 'friant image 3']
     let carousal2 = document.getElementById('carousal-2')
     // carousal2.carousel
     // Does 12 only need a third element to hold all of the changes
     for(let i = 0; i < 12; i++){
         if(i == 0){
-            carousal2.innerHTML = `<section id="img${counter}" class="image img-active"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`  
+            carousal2.innerHTML += `<section id="img${counter}" class="image img-active"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`  
             counter++
         }
         else{
-            carousal2.innerHTML = `<section id="img${counter}" class="image"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`
+            carousal2.innerHTML += `<section id="img${counter}" class="image"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`
             counter++
         }        
     }
