@@ -78,8 +78,11 @@ body {
 } */
 
 /* Decoration for text in nav */
-a {
+.line a{
     margin-right: 50px;
+}
+
+a {
     font-size: larger;
     font-family: inherit;
     color: white;
@@ -222,11 +225,19 @@ a:active {
     border-radius: 5px;
 }
 
+#prt-colors{
+    display: flex;
+    /* object-position: center; */
+    align-items: center;
+    width: 100%;
+    /* height: 100%; */
+}
+
 #prt-words{
     opacity: 0;
     position: relative;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
     bottom: 50%;
     background-color: white;
     width: fit-content;
@@ -412,20 +423,65 @@ footer {
     /* padding-bottom: 2em; */
 }
 
+.buttonHolders{
+    display: flex;
+    width: 100%;
+    height: 0px;
+    justify-content: space-between;
+    position: relative;
+    top: 27.5svh;
+}
+
+.left-image-buttons{
+    position: relative;
+    width: 60px;
+    height: 50px;
+    left: 10%;
+}
+
+.right-image-buttons{
+    position: relative;
+    width: 60px;
+    height: 50px;
+    right: 10%;
+}
+
+.image-holder{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    width: 100%;
+}
+
 .image{
-    width: 100px;
-    height: 20px;
+    display: none;
+    /* height: 100px; */
+}
+
+.img-active{
+    /* object-fit: contain; */
+    width: 100%;
+    height: fit-content;
     background-color: #000;
     border: 1px solid white;
-    overflow: hidden;
-    /* height: 100px; */
+    height: 100%;
+    /* overflow:; */
+    /* background-size: cover; */
+}
+
+.img-active img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
 }
 
 .carousal{
     display: flex;
-    flex-direction: column;
-}
-#carousal-2{
-    width: 100%;
-    height: 100%;
+    height: 55svh;
+    margin-left: auto;
+    margin-right: auto;
+    /* Will get rid of flex-direction */
+    /* flex-direction: column; */
+    /* max-height: 30svh; */
+    /* width: 50%; */
 }
