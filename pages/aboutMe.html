@@ -112,10 +112,14 @@
     <section class="limit column">
         <section class="block">
             <section class="buttonHolders">
-                <button class="left-image-buttons" onclick="left()"></button>
-                <button class="right-image-buttons" onclick="right()"></button>
+                <button class="left-image-buttons" onclick="left()">
+                    <img class="arrow-fit" src="../images/arrow.png" alt="left arrow">
+                </button>
+                <button class="right-image-buttons" onclick="right()">
+                    <img class="arrow-fit flip" src="../images/arrow.png" alt="right arrow">
+                </button>
             </section>
-            <section class="image-holder">
+            <section id="another-2" class="image-holder">
                 <!-- Image carousal here -->
                 <div class="carousal" id="carousal-2"></div>
             </section>

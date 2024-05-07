@@ -61,12 +61,12 @@ window.addEventListener('scroll', function () {
     }
 });
 // This is for the highlight function to work on other pages
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     if (window.location.hash) {
-      var sectionId = window.location.hash.substr(1) + "-2";
-      highlightSection(sectionId);
+        var sectionId = window.location.hash.substr(1) + "-2";
+        highlightSection(sectionId);
     }
-  });
+});
 // After clicking link it will highlight the content (total 5 blinks)
 function highlightSection(sectionId) {
     var section = document.getElementById(sectionId);
@@ -141,12 +141,12 @@ if (document.URL.includes("projects")) {
         project.classList.remove('clickable-hover')
     })
     // trigger.addEventListener('click', () => {
-        // webDrop.classList.toggle('clickable-open')
-        // toggleVis('web','clickable-open');
-        // show1.classList.toggle('drop-down-open');
-        // trigger.classList.toggle('arrChanger')
-        // toggleVis('arrow-2','arrChanger');
-        // console.log('working')
+    // webDrop.classList.toggle('clickable-open')
+    // toggleVis('web','clickable-open');
+    // show1.classList.toggle('drop-down-open');
+    // trigger.classList.toggle('arrChanger')
+    // toggleVis('arrow-2','arrChanger');
+    // console.log('working')
     // })
     web.addEventListener('click', () => {
         project.classList.toggle('clickable-open')
@@ -193,7 +193,7 @@ if (document.URL.includes("projects")) {
     })
 }
 
-function toggleVis(elementID,classToToggle) {
+function toggleVis(elementID, classToToggle) {
     let element = document.getElementById(elementID);
     element.classList.toggle(classToToggle);
     console.log(`Toggle function called on ${element.id}`);
@@ -201,14 +201,14 @@ function toggleVis(elementID,classToToggle) {
 
 // carousal
 // if (document.URL.includes("aboutMe")) {
-    // var counter = 1;
-    // var nameImage2 = ['blue-background.jpg', ]
-    // var nameAlt2 = ['alt', ]
-    // carousal = document.getElementById('carousal')
-    // let carousal2 = document.getElementById('carousal-2')
-    // carousal3 = document.getElementById('carousal-3')
-    
-    // carousal 2
+// var counter = 1;
+// var nameImage2 = ['blue-background.jpg', ]
+// var nameAlt2 = ['alt', ]
+// carousal = document.getElementById('carousal')
+// let carousal2 = document.getElementById('carousal-2')
+// carousal3 = document.getElementById('carousal-3')
+
+// carousal 2
 //     for(let i = 0; i < 12; i++){
 //         if(0){
 //             carousal2.innerHTML(`<section id="img${counter}" class="image img-active"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`)    
@@ -225,20 +225,67 @@ if (document.URL.includes("aboutMe")) {
     console.log('working')
 }
 
-function secondCarousal(){
+function secondCarousal() {
     var counter = 0;
-    var nameImage2 = ['shaver-1.jpg', 'shaver-2.jpg', 'shaver-3.jpg','dif-friant.jpg','honolulu.jpg','sequoia-1.jpg','sequoia-2.jpg','sequoia-3.jpg','friant-1.jpg','friant-2.jpg','fraint-3.jpg']
+    var nameImage2 = ['shaver-1.jpg', 'shaver-2.jpg', 'shaver-3.jpg', 'dif-friant.jpg', 'honolulu.jpg', 'sequoia-1.jpg', 'sequoia-2.jpg', 'sequoia-3.jpg', 'friant-1.jpg', 'friant-2.jpg', 'fraint-3.jpg']
     var nameAlt2 = ['shaver 1 image', 'shaver 2 image', 'shaver 3 image', 'different friant', 'honolulu', 'sequoia national park 1 image', 'sequoia national park 2 image', 'sequoia national park 3 image', 'friant image 1', 'friant image 2', 'friant image 3']
     let carousal2 = document.getElementById('carousal-2')
     // carousal2.carousel
-    for(let i = 0; i < 11; i++){
-        if(i == 0){
-            carousal2.innerHTML += `<section id="img${counter}" class="img-active"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`
+    for (let i = 0; i < 11; i++) {
+        if (i == 0) {
+            carousal2.innerHTML += `<section id="img${counter}" class="sharedClass img-active"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`
             counter++
         }
-        else{
-            carousal2.innerHTML += `<section id="img${counter}" class="image"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`
+        else {
+            carousal2.innerHTML += `<section id="img${counter}" class="sharedClass image"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`
             counter++
-        }        
+        }
     }
+}
+let frame = 0;
+function right() {
+    frame++
+    //get all frames from the frames element another-2 carousal-2
+    let frames = document.getElementById("carousal-2").getElementsByClassName("sharedClass");
+    // console.log(frames)
+    //interate over them
+    let arrayFrame = Array.from(frames);
+    console.log(arrayFrame)
+    // Hide the current active slide
+    arrayFrame[frame - 1].classList.remove("img-active");
+    arrayFrame[frame - 1].classList.add("image");
+
+    // Move to the next slide
+    // frame = (frame) % arrayFrame.length;
+
+    // Show the next slide
+    console.log(arrayFrame[frame])
+    arrayFrame[frame].classList.add("img-active");
+    arrayFrame[frame].classList.remove("image");
+    if(frame == 11){
+        frame = 0
+        arrayFrame[10].classList.remove("img-active");
+        arrayFrame[10].classList.add("image");
+        // Bottom doesnt work
+        arrayFrame[frame].classList.add("img-active");
+        arrayFrame[frame].classList.remove("image");
+    }
+    // for (let i = 0; i <= arrayFrame.length;i++){
+    //     if (arrayFrame[frame].id == "img" + (i)) {
+    //         // arrayFrame[frame].classList.add("image");
+    //         arrayFrame[frame].classList.remove("img-active");
+    //         console.log(arrayFrame[frame].id == 'img' + (i))
+    //         console.log(i)
+    //         console.log(frame)
+    //         console.log(arrayFrame[i])
+    //     } 
+
+    //     else {
+    //         arrayFrame[i - 1].classList.add('image')
+    //         arrayFrame[i].classList.add('img-active')
+    //         arrayFrame[i].classList.remove('image')
+    //         console.log('ran-2')
+
+    //     }
+    // }
 }
