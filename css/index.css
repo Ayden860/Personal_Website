@@ -209,6 +209,10 @@ a:active {
     /* flex-direction: column; */
 }
 
+.block-2{
+    display: flex;
+}
+
 .block p {
     text-align: justify;
     line-height: 2;
@@ -398,9 +402,13 @@ a:active {
 }
 
 .smaller-pic{
-    width: 50%;
+    width: 95%;
     justify-content: center;
     align-self: center;
+}
+
+.forTheBiggerOnes{
+    width:50%;
 }
 
 .dif-color{
@@ -438,6 +446,9 @@ a:active {
 
 .imgOfLimiter{
     cursor: pointer;
+    /* Add this for media query on smaller screens */
+    /* width: 100%;
+    height: fit-content; */
 }
 
 .imgOfLimiter-active{
@@ -445,6 +456,16 @@ a:active {
     top: 50%;
     transform: translate(0%, -50%);
     width: 70%;
+    height: fit-content;
+    max-height: 80%;
+    z-index: 11;
+}
+
+.forTheBiggerOnes-active{
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    width: 40%;
     height: fit-content;
     max-height: 80%;
     z-index: 11;

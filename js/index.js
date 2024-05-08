@@ -6,8 +6,8 @@ home = document.getElementById('home');
 project = document.getElementById('web')
 // (web-subsection)
 webSub = document.querySelector('.web-identity')
-// (resume)
-container = document.getElementById('holder')
+// (resume) | dont need?
+// container = document.getElementById('holder')
 // (about me)
 stoper = document.getElementById('stoper')
 // Detecting screen scroll to change nav
@@ -32,8 +32,8 @@ window.addEventListener('scroll', function () {
             nav.classList.remove('active')
         }
     }
-    // web sebsection
-    if (this.document.URL.includes("/web-subsection/")) {
+    // project pages
+    if (this.document.URL.includes("pages")) {
         if (window.scrollY > nav.offsetTop + webSub.offsetTop) {
             nav.classList.add('active')
         }
@@ -41,15 +41,15 @@ window.addEventListener('scroll', function () {
             nav.classList.remove('active')
         }
     }
-    // Resume page 
-    if (this.document.URL.includes("resume")) {
-        if (window.scrollY > nav.offsetTop + container.offsetHeight) {
-            nav.classList.add('active')
-        }
-        else {
-            nav.classList.remove('active')
-        }
-    }
+    // Resume page | pages does this
+    // if (this.document.URL.includes("resume")) {
+    //     if (window.scrollY > nav.offsetTop + container.offsetHeight) {
+    //         nav.classList.add('active')
+    //     }
+    //     else {
+    //         nav.classList.remove('active')
+    //     }
+    // }
     // About Me
     if (this.document.URL.includes("aboutMe")) {
         if (window.scrollY > nav.offsetTop + stoper.offsetHeight) {
@@ -204,7 +204,7 @@ function toggleVis(elementID, classToToggle) {
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 if (document.URL.includes("aboutMe")) {
     secondCarousal()
-    console.log('working')
+    // console.log('working')
 }
 // could hold all carousals, but for left and right might need to have their own function
 function secondCarousal() {
@@ -229,7 +229,7 @@ function right(number) {
     if (number == 1) {
         frame1++
         //get all images from the carousal element
-        let frames = document.getElementById("carousal-2").getElementsByClassName("sharedClass");
+        let frames = document.getElementById("carousal-1").getElementsByClassName("sharedClass");
         // console.log(frames)
         //turns frames into an array
         let arrayFrame = Array.from(frames);
@@ -256,7 +256,7 @@ function right(number) {
 function left(number) {
     if (number == 1) {
         //get all images from the carousal element
-        let frames = document.getElementById("carousal-2").getElementsByClassName("sharedClass");
+        let frames = document.getElementById("carousal-1").getElementsByClassName("sharedClass");
         // console.log(frames)
         //turns frames into an array
         let arrayFrame = Array.from(frames);
@@ -288,22 +288,43 @@ function left(number) {
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function inLargeImg(){
+    let biggerScale = document.getElementsByClassName('forTheBiggerOnes')
     let preHolder = document.getElementById('before1')
     let image = document.getElementById('after1')
-    console.log(image)
-    image.addEventListener("click", () => {
-        console.log('clicking')
-        preHolder.classList.toggle('full-screen')
-        image.classList.toggle('imgOfLimiter-active')
-    })
-    
+    if(image.classList.contains('forTheBiggerOnes')){
+        image.addEventListener("click", () => {
+            // console.log(biggerScale)
+            preHolder.classList.toggle('full-screen')
+            // image.classList.toggle('imgOfLimiter-active')
+            image.classList.toggle('forTheBiggerOnes-active')
+        })
+    }
+    else{
+        image.addEventListener("click", () => {
+            // console.log('clicking')
+            preHolder.classList.toggle('full-screen')
+            image.classList.toggle('imgOfLimiter-active')
+        })
+    }
+
     let preHolder2 = document.getElementById('before2')
     let image2 = document.getElementById('after2')
-    image2.addEventListener("click", () => {
-        preHolder2.classList.toggle('full-screen')
-        image2.classList.toggle('imgOfLimiter-active')
-    })
+    if(image2){
+        image2.addEventListener("click", () => {
+            preHolder2.classList.toggle('full-screen')
+            image2.classList.toggle('imgOfLimiter-active')
+        })
+    }
+
+    let preHolder3 = document.getElementById('before3')
+    let image3 = document.getElementById('after3')
+    if(image3){
+        image3.addEventListener("click", () => {
+            preHolder3.classList.toggle('full-screen')
+            image3.classList.toggle('imgOfLimiter-active')
+        })   
+    }
 }
-if (document.URL.includes("web-subsection")) {
+if (document.URL.includes("/pages/")) {
     inLargeImg()
 }
