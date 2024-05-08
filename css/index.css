@@ -407,6 +407,49 @@ a:active {
     background-color: #0F6298;
 }
 
+.preLimiter{
+    display: flex;
+    width: 100%;
+    height: 60svh;
+}
+
+.imgLimiter{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    /* object-fit: contain; */
+}
+
+.full-screen{
+    /* display: flex;
+    min-width: 100svw;
+    min-height: 100svh;
+    justify-content: center;
+    align-items: center; */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(51,51,51,0.7);
+    z-index: 10;
+}
+
+.imgOfLimiter{
+    cursor: pointer;
+}
+
+.imgOfLimiter-active{
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    width: 70%;
+    height: fit-content;
+    max-height: 80%;
+    z-index: 11;
+}
+
 footer {
     position: absolute;
     width: 100%;

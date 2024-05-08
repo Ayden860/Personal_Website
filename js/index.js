@@ -60,6 +60,7 @@ window.addEventListener('scroll', function () {
         }
     }
 });
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // This is for the highlight function to work on other pages
 document.addEventListener('DOMContentLoaded', function () {
     if (window.location.hash) {
@@ -105,7 +106,7 @@ function highlightSection(sectionId) {
         //}, 1000); //Remove
     }
 }
-
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 if (document.URL.includes("index.html")) {
     // Pretty color/words working
     const prtColors = document.getElementById('prt-colors')
@@ -127,6 +128,7 @@ if (document.URL.includes("index.html")) {
     });
 
 }
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 if (document.URL.includes("projects")) {
     trigger = document.getElementById('arrow-2')
     show1 = document.getElementById("drop-down-1")
@@ -199,93 +201,109 @@ function toggleVis(elementID, classToToggle) {
     console.log(`Toggle function called on ${element.id}`);
 }
 
-// carousal
-// if (document.URL.includes("aboutMe")) {
-// var counter = 1;
-// var nameImage2 = ['blue-background.jpg', ]
-// var nameAlt2 = ['alt', ]
-// carousal = document.getElementById('carousal')
-// let carousal2 = document.getElementById('carousal-2')
-// carousal3 = document.getElementById('carousal-3')
-
-// carousal 2
-//     for(let i = 0; i < 12; i++){
-//         if(0){
-//             carousal2.innerHTML(`<section id="img${counter}" class="image img-active"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`)    
-//             counter++
-//         }
-//         else{
-//             carousal2.innerHTML(`<section id="img${counter}" class="image"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`)
-//             counter++
-//         }        
-//     }
-// }
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 if (document.URL.includes("aboutMe")) {
     secondCarousal()
     console.log('working')
 }
-
+// could hold all carousals, but for left and right might need to have their own function
 function secondCarousal() {
     var counter = 0;
     var nameImage2 = ['shaver-1.jpg', 'shaver-2.jpg', 'shaver-3.jpg', 'dif-friant.jpg', 'honolulu.jpg', 'sequoia-1.jpg', 'sequoia-2.jpg', 'sequoia-3.jpg', 'friant-1.jpg', 'friant-2.jpg', 'fraint-3.jpg']
     var nameAlt2 = ['shaver 1 image', 'shaver 2 image', 'shaver 3 image', 'different friant', 'honolulu', 'sequoia national park 1 image', 'sequoia national park 2 image', 'sequoia national park 3 image', 'friant image 1', 'friant image 2', 'friant image 3']
-    let carousal2 = document.getElementById('carousal-2')
-    // carousal2.carousel
+    let carousal1 = document.getElementById('carousal-1')
     for (let i = 0; i < 11; i++) {
         if (i == 0) {
-            carousal2.innerHTML += `<section id="img${counter}" class="sharedClass img-active"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`
+            carousal1.innerHTML += `<section id="img${counter}" class="sharedClass img-active"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`
             counter++
         }
         else {
-            carousal2.innerHTML += `<section id="img${counter}" class="sharedClass image"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`
+            carousal1.innerHTML += `<section id="img${counter}" class="sharedClass image"> <img src="../images/${nameImage2[i]}" alt="${nameAlt2[i]}"></section>`
             counter++
         }
     }
 }
-let frame = 0;
-function right() {
-    frame++
-    //get all frames from the frames element another-2 carousal-2
-    let frames = document.getElementById("carousal-2").getElementsByClassName("sharedClass");
-    // console.log(frames)
-    //interate over them
-    let arrayFrame = Array.from(frames);
-    console.log(arrayFrame)
-    // Hide the current active slide
-    arrayFrame[frame - 1].classList.remove("img-active");
-    arrayFrame[frame - 1].classList.add("image");
+// right and left functions for carousal2
+let frame1 = 0;
+function right(number) {
+    if (number == 1) {
+        frame1++
+        //get all images from the carousal element
+        let frames = document.getElementById("carousal-2").getElementsByClassName("sharedClass");
+        // console.log(frames)
+        //turns frames into an array
+        let arrayFrame = Array.from(frames);
+        // console.log(arrayFrame) ////shows the array
+        // Hides the first active slide
+        arrayFrame[frame1 - 1].classList.remove("img-active");
+        arrayFrame[frame1 - 1].classList.add("image");
 
-    // Move to the next slide
-    // frame = (frame) % arrayFrame.length;
+        // Show the next slide
+        console.log(arrayFrame[frame1]) //shows the image your on
+        arrayFrame[frame1].classList.add("img-active");
+        arrayFrame[frame1].classList.remove("image");
 
-    // Show the next slide
-    console.log(arrayFrame[frame])
-    arrayFrame[frame].classList.add("img-active");
-    arrayFrame[frame].classList.remove("image");
-    if(frame == 11){
-        frame = 0
-        arrayFrame[10].classList.remove("img-active");
-        arrayFrame[10].classList.add("image");
-        // Bottom doesnt work
-        arrayFrame[frame].classList.add("img-active");
-        arrayFrame[frame].classList.remove("image");
+        // resets and loops the right
+        if (arrayFrame[frame1].id == "img" + (10)) {
+            frame1 = 0;
+            arrayFrame[frame1].classList.add("img-active");
+            arrayFrame[frame1].classList.remove("image");
+            arrayFrame[10].classList.remove("img-active");
+            arrayFrame[10].classList.add("image");
+        }
     }
-    // for (let i = 0; i <= arrayFrame.length;i++){
-    //     if (arrayFrame[frame].id == "img" + (i)) {
-    //         // arrayFrame[frame].classList.add("image");
-    //         arrayFrame[frame].classList.remove("img-active");
-    //         console.log(arrayFrame[frame].id == 'img' + (i))
-    //         console.log(i)
-    //         console.log(frame)
-    //         console.log(arrayFrame[i])
-    //     } 
+}
+function left(number) {
+    if (number == 1) {
+        //get all images from the carousal element
+        let frames = document.getElementById("carousal-2").getElementsByClassName("sharedClass");
+        // console.log(frames)
+        //turns frames into an array
+        let arrayFrame = Array.from(frames);
+        // console.log(arrayFrame) ////shows the array
+        // Hides current slide
+        console.log(arrayFrame[frame1]) //shows the image your on
+        arrayFrame[frame1].classList.remove("img-active");
+        arrayFrame[frame1].classList.add("image");
 
-    //     else {
-    //         arrayFrame[i - 1].classList.add('image')
-    //         arrayFrame[i].classList.add('img-active')
-    //         arrayFrame[i].classList.remove('image')
-    //         console.log('ran-2')
+        // resets and loops the right
+        if (arrayFrame[frame1].id == "img" + (0)) {
+            arrayFrame[frame1].classList.remove("img-active");
+            arrayFrame[frame1].classList.add("image");
+            frame1 = 10;
+            arrayFrame[frame1].classList.add("img-active");
+            arrayFrame[frame1].classList.remove("image");
+        }
+        else {
+            // shows previous slide
+            // console.log('you ran')
+            arrayFrame[10].classList.remove("img-active");
+            arrayFrame[10].classList.add("image");
+            arrayFrame[frame1 - 1].classList.add("img-active");
+            arrayFrame[frame1 - 1].classList.remove("image");
+        }
+        frame1--
+    }
+}
 
-    //     }
-    // }
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function inLargeImg(){
+    let preHolder = document.getElementById('before1')
+    let image = document.getElementById('after1')
+    console.log(image)
+    image.addEventListener("click", () => {
+        console.log('clicking')
+        preHolder.classList.toggle('full-screen')
+        image.classList.toggle('imgOfLimiter-active')
+    })
+    
+    let preHolder2 = document.getElementById('before2')
+    let image2 = document.getElementById('after2')
+    image2.addEventListener("click", () => {
+        preHolder2.classList.toggle('full-screen')
+        image2.classList.toggle('imgOfLimiter-active')
+    })
+}
+if (document.URL.includes("web-subsection")) {
+    inLargeImg()
 }
