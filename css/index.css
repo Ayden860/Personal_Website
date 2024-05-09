@@ -165,6 +165,8 @@ a:active {
 }
 
 .name {
+    position: relative;
+    bottom: 40%;
     line-height: 2;
     height: fit-content;
 }
@@ -588,6 +590,12 @@ footer {
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 @media screen and (max-width: 426px) {
+    .name {
+        position: relative;
+        top: 32%;
+        line-height: 2;
+        height: fit-content;
+    }
     .name>h1{
         font-size: 2em;
     }
