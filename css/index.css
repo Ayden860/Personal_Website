@@ -687,7 +687,7 @@ footer {
     #arrow {
         width: 7.5svw;
         position: fixed;
-        top: 70px;
+        top: 13svh;
         left: 10px;
         transition: ease-out 400ms;
     }
@@ -696,5 +696,40 @@ footer {
     }
     .right{
         padding-left: 10px;
+    }
+    .imgOfLimiter {
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+    }
+    .imgLimiter {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .preLimiter {
+        display: flex;
+        width: 100%;
+        height: 25svh;
+    }
+    .imgOfLimiter-active {
+        position: absolute;
+        top: 50%;
+        transform: translate(0%, -50%);
+        height: fit-content;
+        max-width: 80%;
+        max-height: 25%;
+        z-index: 11;
+    }
+    .forTheBiggerOnes-active {
+        position: absolute;
+        top: 50%;
+        transform: translate(0%, -50%);
+        height: fit-content;
+        max-height: 80%;
+        max-width: 90%;
+        z-index: 11;
     }
   }

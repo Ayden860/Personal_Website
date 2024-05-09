@@ -309,8 +309,15 @@ function inLargeImg(){
 
     let preHolder2 = document.getElementById('before2')
     let image2 = document.getElementById('after2')
-    if(image2){
+    if(image2.classList.contains('forTheBiggerOnes')){
         image2.addEventListener("click", () => {
+            preHolder2.classList.toggle('full-screen')
+            image2.classList.toggle('forTheBiggerOnes-active')
+        })
+    }
+    else{
+        image2.addEventListener("click", () => {
+            // console.log('clicking')
             preHolder2.classList.toggle('full-screen')
             image2.classList.toggle('imgOfLimiter-active')
         })
@@ -318,11 +325,19 @@ function inLargeImg(){
 
     let preHolder3 = document.getElementById('before3')
     let image3 = document.getElementById('after3')
-    if(image3){
+    if(image3.classList.contains('forTheBiggerOnes')){
+        console.log('why are you running')
         image3.addEventListener("click", () => {
             preHolder3.classList.toggle('full-screen')
-            image3.classList.toggle('imgOfLimiter-active')
+            image3.classList.toggle('forTheBiggerOnes-active')
         })   
+    }
+    else{
+        image3.addEventListener("click", () => {
+            // console.log('clicking')
+            preHolder3.classList.toggle('full-screen')
+            image3.classList.toggle('imgOfLimiter-active')
+        })
     }
 }
 if (document.URL.includes("/pages/")) {
