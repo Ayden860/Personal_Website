@@ -623,7 +623,7 @@ footer {
         transition: ease-out 400ms;
     }
     .block p {
-        text-align: left;
+        text-align: justify;
         line-height: 2;
         padding-left: 0rem;
         padding-right: 0rem;
