@@ -221,6 +221,7 @@ a:active {
     padding-left: 2rem;
     padding-right: 2rem;
     font-weight: 600;
+    color: white;
 }
 
 .block a {
@@ -275,6 +276,14 @@ a:active {
     width: 100%;
     padding: 20px;
     color: white;
+}
+
+iframe{
+    display: flex;
+    justify-content: center;
+    width: 960px;
+    height: 569px;
+    align-self: center;
 }
 
 .picture-holder{
@@ -628,6 +637,7 @@ footer {
         padding-left: 0rem;
         padding-right: 0rem;
         font-weight: 600;
+        color: white;
     }
     #noChange-2 {
         display: flex;
@@ -731,5 +741,12 @@ footer {
         max-height: 80%;
         max-width: 90%;
         z-index: 11;
+    }
+    iframe{
+        display: flex;
+        justify-content: center;
+        width: 275px;
+        height: 220px;
+        align-self: center;
     }
   }
