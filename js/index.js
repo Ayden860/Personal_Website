@@ -15,7 +15,7 @@ stoper = document.getElementById('stoper')
 window.addEventListener('scroll', function () {
     // console.log(window.scrollY)
     // Index page
-    if (this.document.URL.includes("index", "aydenyangportfolio")) {
+    if (this.document.URL.includes("index", "https://aydenyangportfolio.netlify.app/")) {
         if (window.scrollY > nav.offsetTop + home.offsetHeight) {
             nav.classList.add('active')
         }
